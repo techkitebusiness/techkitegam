@@ -1,4 +1,5 @@
-import 'dotenv/config'
+// import 'dotenv/config'
+require('dotenv').config();
 
 import express from 'express';
 import configViewEngine from './config/configEngine';
