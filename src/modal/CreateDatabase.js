@@ -63,7 +63,9 @@ const Level = async(req, res) => {
     await connection.execute("INSERT INTO level SET id = 3, level = 2, f1 = 0.75, f2 = 0.225, f3 = 0.0675, f4 = 0.0203");
     await connection.execute("INSERT INTO level SET id = 2, level = 1, f1 = 0.7, f2 = 0.21, f3 = 0.063, f4 = 0.0189");
     await connection.execute("INSERT INTO level SET id = 1, level = 0, f1 = 0.6, f2 = 0.18, f3 = 0.054, f4 = 0.0162");
+    console.log("Create Success Database Level.");
 }
+
 
 const NapRut = async(req, res) => {
     
@@ -71,6 +73,7 @@ const NapRut = async(req, res) => {
     await connection.execute('DELETE FROM bank_recharge');
     await connection.execute("INSERT INTO `bank_recharge` (`id`, `name_bank`, `name_user`, `stk`, `type`, `time`) VALUES (NULL, 'MB BANK', 'NGUYEN NHAT LONG', '0800103725300', 'bank', '1655689155500')");
     await connection.execute("INSERT INTO `bank_recharge` (`id`, `name_bank`, `name_user`, `stk`, `type`, `time`) VALUES (NULL, 'MOMO', 'NGUYEN NHAT LONG', '387633464', 'momo', '1655689155500')");
+    console.log("Create Success Database NapRut.");
 }
 
 const Admin = async(req, res) => {
@@ -78,11 +81,25 @@ const Admin = async(req, res) => {
     // Reset DataBase Level
     await connection.execute('DELETE FROM admin');
     await connection.execute("INSERT INTO `admin` (`id`, `wingo1`, `wingo3`, `wingo5`, `wingo10`, `k5d`, `k5d3`, `k5d5`, `k5d10`, `win_rate`, `telegram`, `cskh`, `app`) VALUES (NULL, '-1', '-1', '-1', '-1', '-1', '-1', '-1', '-1', '80', 'https://t.me/josorir', 'https://t.me/basusir', '#')");
+    console.log("Create Success Database Admin.");
+}
+const users = async(req, res) => {
+    
+    // Reset DataBase Level
+    await connection.execute('DELETE FROM users');
+    await connection.execute("INSERT INTO `users` (`id`, `id_user`, `phone`, `token`, `name_user`, `password`, `plain_password`, `money`, `total_money`, `roses_f1`, `roses_f`, `roses_today`, `level`, `rank`, `code`, `invite`, `ctv`, `veri`, `otp`, `ip_address`, `status`, `today`, `time`, `time_otp`, `user_level`) VALUES (282, '26289', '9876543210', '3d39f4bd2d702ee0ad607a6915db871c', 'Member93658', '4de93544234adffbb681ed60ffcfb941', 'Admin@1234', 3522, 0, 0, 0, 0, 1, 1, 'uVxnY75353', 'AABBC11223', '000000', 1, '964411', '::1', 1, '2024-02-25 18:41:52', '1708886512413', '0', 1)");
+    await connection.execute("INSERT INTO `users` (`id`, `id_user`, `phone`, `token`, `name_user`, `password`, `plain_password`, `money`, `total_money`, `roses_f1`, `roses_f`, `roses_today`, `level`, `rank`, `code`, `invite`, `ctv`, `veri`, `otp`, `ip_address`, `status`, `today`, `time`, `time_otp`, `user_level`) VALUES (283, '26289', '9998887775', '3d39f4bd2d702ee0ad607a6915db871c', 'Member93658', '4de93544234adffbb681ed60ffcfb941', 'Admin@1234', 3522, 0, 0, 0, 0, 1, 1, 'uVxnY75353', 'AAAAA11111', '000000', 1, '964411', '::1', 1, '2024-02-25 18:41:52', '1708886512413', '0', 1)");
+    console.log("Create Success Database users.");
 }
 
-CreateWingo();
-Create5D();
-CreateK3();
-Level()
+
+
+
+
 Admin()
+users()
+Level()
 NapRut()
+Create5D();
+CreateWingo();
+CreateK3()
